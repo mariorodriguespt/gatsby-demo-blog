@@ -1,0 +1,922 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/gatsby-demo-blog/component---src-layouts-index-js-e1fbdcb20f729d9e6330.js" as="script"/><link rel="preload" href="/gatsby-demo-blog/component---src-templates-blog-post-js-53f5e13af07cbc44adcb.js" as="script"/><link rel="preload" href="/gatsby-demo-blog/path---graph-ql-b5914f96844e918bb37c.js" as="script"/><link rel="preload" href="/gatsby-demo-blog/app-604c0271e7de0126a935.js" as="script"/><link rel="preload" href="/gatsby-demo-blog/commons-a07bddd5c4350f4b84cb.js" as="script"/><title data-react-helmet="true">GraphQL -  My blog</title><meta data-react-helmet="true" name="description" content="Sample"/><meta data-react-helmet="true" name="keywords" content="sample, something"/><style id="gatsby-inlined-css">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45em georgia,serif;box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{color:rgba(0,0,0,.8);font-family:georgia,serif;font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";-webkit-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt","kern"}img{max-width:100%;margin:0 0 1.45rem;padding:0}h1{font-size:2.25rem}h1,h2{margin:0 0 1.45rem;padding:0;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{margin:0 0 1.45rem;padding:0;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{margin:0 0 1.45rem;padding:0;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{margin:0 0 1.45rem;padding:0}ol,ul{margin:0 0 1.45rem 1.45rem;padding:0;list-style-position:outside;list-style-image:none}dd,dl,figure,p{margin:0 0 1.45rem;padding:0}pre{padding:0;font-size:.85rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}pre,table{margin:0 0 1.45rem}table{padding:0;font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset{margin:0 0 1.45rem;padding:0}blockquote{margin:0 1.45rem 1.45rem;padding:0}form,iframe,noscript{margin:0 0 1.45rem;padding:0}hr{margin:0 0 calc(1.45rem - 1px);padding:0;background:rgba(0,0,0,.2);border:none;height:1px}address{margin:0 0 1.45rem;padding:0}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:0;padding-top:.2em;padding-bottom:.2em}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}@media only screen and (max-width:480px){html{font-size:100%}}</style></head><body><div id="___gatsby"><div data-reactroot="" data-reactid="1" data-react-checksum="1098111117"><!-- react-empty: 2 --><div style="background:rebeccapurple;margin-bottom:1.45rem;" data-reactid="3"><div style="margin:0 auto;max-width:960px;padding:1.45rem 1.0875rem;" data-reactid="4"><h1 style="margin:0;" data-reactid="5"><a style="color:white;text-decoration:none;" href="/gatsby-demo-blog/" data-reactid="6">Gatsby Default Starter</a></h1></div></div><div style="margin:0 auto;max-width:960px;padding:0px 1.0875rem 1.45rem;padding-top:0;" data-reactid="7"><div data-reactid="8"><!-- react-empty: 9 --><div data-reactid="10"><h1 data-reactid="11">GraphQL</h1><h3 data-reactid="12">Some other string</h3><div data-reactid="13"><h1>GraphQL</h1>
+<p>The GraphQL specification is edited in the markdown files found in <a href="./spec"><code>/spec</code></a>
+the latest release of which is published at <a href="http://facebook.github.io/graphql/">http://facebook.github.io/graphql/</a>.</p>
+<p>The latest draft specification can be found at <a href="http://facebook.github.io/graphql/draft/">http://facebook.github.io/graphql/draft/</a>
+which tracks the latest commit to the master branch in this repository.</p>
+<p>Previous releases of the GraphQL specification can be found at permalinks that
+match their <a href="https://github.com/facebook/graphql/releases">release tag</a>. For
+example, <a href="http://facebook.github.io/graphql/October2016/">http://facebook.github.io/graphql/October2016/</a>. If you are linking
+directly to the GraphQL specification, it's best to link to a tagged permalink
+for the particular referenced version.</p>
+<h2>Overview</h2>
+<p>This is a Working Draft of the Specification for GraphQL, a query language for APIs created by Facebook.</p>
+<p>The target audience for this specification is not the client developer, but those who have,
+or are actively interested in, building their own GraphQL implementations and
+tools.</p>
+<p>In order to be broadly adopted, GraphQL will have to target a wide
+variety of backends, frameworks, and languages, which will necessitate a
+collaborative effort across projects and organizations. This specification serves as a point of coordination for this effort.</p>
+<p>Looking for help? Find resources <a href="http://graphql.org/community/">from the community</a>.</p>
+<h2>Getting Started</h2>
+<p>GraphQL consists of a type system, query language and execution semantics,
+static validation, and type introspection, each outlined below. To guide you
+through each of these components, we've written an example designed to
+illustrate the various pieces of GraphQL.</p>
+<p>This example is not comprehensive, but it is designed to quickly introduce
+the core concepts of GraphQL, to provide some context before diving into
+the more detailed specification or the <a href="https://github.com/graphql/graphql-js">GraphQL.js</a>
+reference implementation.</p>
+<p>The premise of the example is that we want to use GraphQL to query for
+information about characters and locations in the original Star Wars
+trilogy.</p>
+<h3>Type System</h3>
+<p>At the heart of any GraphQL implementation is a description of what types
+of objects it can return, described in a GraphQL type system and returned
+in the GraphQL Schema.</p>
+<p>For our Star Wars example, the
+<a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsSchema.js">starWarsSchema.js</a>
+file in GraphQL.js defines this type system.</p>
+<p>The most basic type in the system will be <code>Human</code>, representing characters
+like Luke, Leia, and Han. All humans in our type system will have a name,
+so we define the <code>Human</code> type to have a field called "name". This returns
+a String, and we know that it is not null (since all <code>Human</code>s have a name),
+so we will define the "name" field to be a non-nullable String. Using a
+shorthand notation that we will use throughout the spec and documentation,
+we would describe the human type as:</p>
+<pre><code class="language-graphql">type Human {
+  name: String
+}
+</code></pre>
+<p>This shorthand is convenient for describing the basic shape of a type
+system; the JavaScript implementation is more full-featured, and allows types
+and fields to be documented. It also sets up the mapping between the
+type system and the underlying data; for a test case in GraphQL.js, the
+underlying data is a <a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsData.js">set of JavaScript objects</a>,
+but in most cases the backing data will be accessed through some service, and
+this type system layer will be responsible for mapping from types and fields to
+that service.</p>
+<p>A common pattern in many APIs, and indeed in GraphQL is to give
+objects an ID that can be used to refetch the object. So let's add
+that to our Human type. We'll also add a string for their home
+planet.</p>
+<pre><code class="language-graphql">type Human {
+  id: String
+  name: String
+  homePlanet: String
+}
+</code></pre>
+<p>Since we're talking about the Star Wars trilogy, it would be useful
+to describe the episodes in which each character appears. To do so, we'll
+first define an enum, which lists the three episodes in the trilogy:</p>
+<pre><code class="language-graphql">enum Episode { NEWHOPE, EMPIRE, JEDI }
+</code></pre>
+<p>Now we want to add a field to <code>Human</code> describing what episodes they
+were in. This will return a list of <code>Episode</code>s:</p>
+<pre><code class="language-graphql">type Human {
+  id: String
+  name: String
+  appearsIn: [Episode]
+  homePlanet: String
+}
+</code></pre>
+<p>Now, let's introduce another type, <code>Droid</code>:</p>
+<pre><code class="language-graphql">type Droid {
+  id: String
+  name: String
+  appearsIn: [Episode]
+  primaryFunction: String
+}
+</code></pre>
+<p>Now we have two types! Let's add a way of going between them: humans
+and droids both have friends. But humans can be friends with both
+humans and droids. How do we refer to either a human or a droid?</p>
+<p>If we look, we note that there's common functionality between
+humans and droids; they both have IDs, names, and episodes in which
+they appear. So we'll add an interface, <code>Character</code>, and make
+both <code>Human</code> and <code>Droid</code> implement it. Once we have that, we can
+add the <code>friends</code> field, that returns a list of <code>Character</code>s.</p>
+<p>Our type system so far is:</p>
+<pre><code class="language-graphql">enum Episode { NEWHOPE, EMPIRE, JEDI }
+
+interface Character {
+  id: String
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+}
+
+type Human implements Character {
+  id: String
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+  homePlanet: String
+}
+
+type Droid implements Character {
+  id: String
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+  primaryFunction: String
+}
+</code></pre>
+<p>One question we might ask, though, is whether any of those fields can return
+<code>null</code>. By default, <code>null</code> is a permitted value for any type in GraphQL,
+since fetching data to fulfill a GraphQL query often requires talking
+to different services that may or may not be available. However, if the
+type system can guarantee that a type is never null, then we can mark
+it as Non Null in the type system. We indicate that in our shorthand
+by adding an "!" after the type. We can update our type system to note
+that the <code>id</code> is never null.</p>
+<p>Note that while in our current implementation, we can guarantee that more
+fields are non-null (since our current implementation has hard-coded data),
+we didn't mark them as non-null. One can imagine we would eventually
+replace our hardcoded data with a backend service, which might not be
+perfectly reliable; by leaving these fields as nullable, we allow
+ourselves the flexibility to eventually return null to indicate a backend
+error, while also telling the client that the error occurred.</p>
+<pre><code class="language-graphql">enum Episode { NEWHOPE, EMPIRE, JEDI }
+
+interface Character {
+  id: String!
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+}
+
+type Human implements Character {
+  id: String!
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+  homePlanet: String
+}
+
+type Droid implements Character {
+  id: String!
+  name: String
+  friends: [Character]
+  appearsIn: [Episode]
+  primaryFunction: String
+}
+</code></pre>
+<p>We're missing one last piece: an entry point into the type system.</p>
+<p>When we define a schema, we define an object type that is the basis for all
+queries. The name of this type is <code>Query</code> by convention, and it describes
+our public, top-level API. Our <code>Query</code> type for this example will look like
+this:</p>
+<pre><code class="language-graphql">type Query {
+  hero(episode: Episode): Character
+  human(id: String!): Human
+  droid(id: String!): Droid
+}
+</code></pre>
+<p>In this example, there are three top-level operations
+that can be done on our schema:</p>
+<ul>
+<li><code>hero</code> returns the <code>Character</code> who is the hero of the Star Wars trilogy; it
+takes an optional argument that allows us to fetch the hero of a specific
+episode instead.</li>
+<li><code>human</code> accepts a non-null string as a query argument, a human's ID, and
+returns the human with that ID.</li>
+<li><code>droid</code> does the same for droids.</li>
+</ul>
+<p>These fields demonstrate another feature of the type system, the ability
+for a field to specify arguments that configure their behavior.</p>
+<p>When we package the whole type system together, defining the <code>Query</code> type
+above as our entry point for queries, this creates a GraphQL Schema.</p>
+<p>This example just scratched the surface of the type system. The specification
+goes into more detail about this topic in the "Type System" section, and the <a href="https://github.com/graphql/graphql-js/blob/master/src/type">type</a>
+directory in GraphQL.js contains code implementing
+a specification-compliant GraphQL type system.</p>
+<h3>Query Syntax</h3>
+<p>GraphQL queries declaratively describe what data the issuer wishes
+to fetch from whoever is fulfilling the GraphQL query.</p>
+<p>For our Star Wars example, the
+<a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsQuery-test.js">starWarsQueryTests.js</a>
+file in the GraphQL.js repository contains a number of queries and responses.
+That file is a test file that uses the schema discussed above and a set of
+sample data, located in
+<a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsData.js">starWarsData.js</a>.
+This test file can be run to exercise the reference implementation.</p>
+<p>An example query on the above schema would be:</p>
+<pre><code class="language-graphql">query HeroNameQuery {
+  hero {
+    name
+  }
+}
+</code></pre>
+<p>The initial line, <code>query HeroNameQuery</code>, defines a query with the operation
+name <code>HeroNameQuery</code> that starts with the schema's root query type; in this
+case, <code>Query</code>. As defined above, <code>Query</code> has a <code>hero</code> field that returns a
+<code>Character</code>, so we'll query for that. <code>Character</code> then has a <code>name</code> field that
+returns a <code>String</code>, so we query for that, completing our query. The result of
+this query would then be:</p>
+<pre><code class="language-json">{
+  "hero": {
+    "name": "R2-D2"
+  }
+}
+</code></pre>
+<p>Specifying the <code>query</code> keyword and an operation name is only required when a
+GraphQL document defines multiple operations. We therefore could have written
+the previous query with the query shorthand:</p>
+<pre><code class="language-graphql">{
+  hero {
+    name
+  }
+}
+</code></pre>
+<p>Assuming that the backing data for the GraphQL server identified R2-D2 as the
+hero. The response continues to vary based on the request; if we asked for
+R2-D2's ID and friends with this query:</p>
+<pre><code class="language-graphql">query HeroNameAndFriendsQuery {
+  hero {
+    id
+    name
+    friends {
+      id
+      name
+    }
+  }
+}
+</code></pre>
+<p>then we'll get back a response like this:</p>
+<pre><code class="language-json">{
+  "hero": {
+    "id": "2001",
+    "name": "R2-D2",
+    "friends": [
+      {
+        "id": "1000",
+        "name": "Luke Skywalker"
+      },
+      {
+        "id": "1002",
+        "name": "Han Solo"
+      },
+      {
+        "id": "1003",
+        "name": "Leia Organa"
+      }
+    ]
+  }
+}
+</code></pre>
+<p>One of the key aspects of GraphQL is its ability to nest queries. In the
+above query, we asked for R2-D2's friends, but we can ask for more information
+about each of those objects. So let's construct a query that asks for R2-D2's
+friends, gets their name and episode appearances, then asks for each of <em>their</em>
+friends.</p>
+<pre><code class="language-graphql">query NestedQuery {
+  hero {
+    name
+    friends {
+      name
+      appearsIn
+      friends {
+        name
+      }
+    }
+  }
+}
+</code></pre>
+<p>which will give us the nested response</p>
+<pre><code class="language-json">{
+  "hero": {
+    "name": "R2-D2",
+    "friends": [
+      {
+        "name": "Luke Skywalker",
+        "appearsIn": ["NEWHOPE", "EMPIRE", "JEDI"],
+        "friends": [
+          { "name": "Han Solo" },
+          { "name": "Leia Organa" },
+          { "name": "C-3PO" },
+          { "name": "R2-D2" }
+        ]
+      },
+      {
+        "name": "Han Solo",
+        "appearsIn": ["NEWHOPE", "EMPIRE", "JEDI"],
+        "friends": [
+          { "name": "Luke Skywalker" },
+          { "name": "Leia Organa" },
+          { "name": "R2-D2" }
+        ]
+      },
+      {
+        "name": "Leia Organa",
+        "appearsIn": ["NEWHOPE", "EMPIRE", "JEDI"],
+        "friends": [
+          { "name": "Luke Skywalker" },
+          { "name": "Han Solo" },
+          { "name": "C-3PO" },
+          { "name": "R2-D2" }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<p>The <code>Query</code> type above defined a way to fetch a human given their
+ID. We can use it by hardcoding the ID in the query:</p>
+<pre><code class="language-graphql">query FetchLukeQuery {
+  human(id: "1000") {
+    name
+  }
+}
+</code></pre>
+<p>to get</p>
+<pre><code class="language-json">{
+  "human": {
+    "name": "Luke Skywalker"
+  }
+}
+</code></pre>
+<p>Alternately, we could have defined the query to have a query parameter:</p>
+<pre><code class="language-graphql">query FetchSomeIDQuery($someId: String!) {
+  human(id: $someId) {
+    name
+  }
+}
+</code></pre>
+<p>This query is now parameterized by <code>$someId</code>; to run it, we must provide
+that ID. If we ran it with <code>$someId</code> set to "1000", we would get Luke;
+set to "1002", we would get Han. If we passed an invalid ID here,
+we would get <code>null</code> back for the <code>human</code>, indicating that no such object
+exists.</p>
+<p>Notice that the key in the response is the name of the field, by default.
+It is sometimes useful to change this key, for clarity or to avoid key
+collisions when fetching the same field with different arguments.</p>
+<p>We can do that with field aliases, as demonstrated in this query:</p>
+<pre><code class="language-graphql">query FetchLukeAliased {
+  luke: human(id: "1000") {
+    name
+  }
+}
+</code></pre>
+<p>We aliased the result of the <code>human</code> field to the key <code>luke</code>. Now the response
+is:</p>
+<pre><code class="language-json">{
+  "luke": {
+    "name": "Luke Skywalker"
+  }
+}
+</code></pre>
+<p>Notice the key is "luke" and not "human", as it was in our previous example
+where we did not use the alias.</p>
+<p>This is particularly useful if we want to use the same field twice
+with different arguments, as in the following query:</p>
+<pre><code class="language-graphql">query FetchLukeAndLeiaAliased {
+  luke: human(id: "1000") {
+    name
+  }
+  leia: human(id: "1003") {
+    name
+  }
+}
+</code></pre>
+<p>We aliased the result of the first <code>human</code> field to the key
+<code>luke</code>, and the second to <code>leia</code>. So the result will be:</p>
+<pre><code class="language-json">{
+  "luke": {
+    "name": "Luke Skywalker"
+  },
+  "leia": {
+    "name": "Leia Organa"
+  }
+}
+</code></pre>
+<p>Now imagine we wanted to ask for Luke and Leia's home planets. We could do so
+with this query:</p>
+<pre><code class="language-graphql">query DuplicateFields {
+  luke: human(id: "1000") {
+    name
+    homePlanet
+  }
+  leia: human(id: "1003") {
+    name
+    homePlanet
+  }
+}
+</code></pre>
+<p>but we can already see that this could get unwieldy, since we have to add new
+fields to both parts of the query. Instead, we can extract out the common fields
+into a fragment, and include the fragment in the query, like this:</p>
+<pre><code class="language-graphql">query UseFragment {
+  luke: human(id: "1000") {
+    ...HumanFragment
+  }
+  leia: human(id: "1003") {
+    ...HumanFragment
+  }
+}
+
+fragment HumanFragment on Human {
+  name
+  homePlanet
+}
+</code></pre>
+<p>Both of those queries give this result:</p>
+<pre><code class="language-json">{
+  "luke": {
+    "name": "Luke Skywalker",
+    "homePlanet": "Tatooine"
+  },
+  "leia": {
+    "name": "Leia Organa",
+    "homePlanet": "Alderaan"
+  }
+}
+</code></pre>
+<p>The <code>UseFragment</code> and <code>DuplicateFields</code> queries will both get the same result, but
+<code>UseFragment</code> is less verbose; if we wanted to add more fields, we could add
+it to the common fragment rather than copying it into multiple places.</p>
+<p>We defined the type system above, so we know the type of each object
+in the output; the query can ask for that type using the special
+field <code>__typename</code>, defined on every object.</p>
+<pre><code class="language-graphql">query CheckTypeOfR2 {
+  hero {
+    __typename
+    name
+  }
+}
+</code></pre>
+<p>Since R2-D2 is a droid, this will return</p>
+<pre><code class="language-json">{
+  "hero": {
+    "__typename": "Droid",
+    "name": "R2-D2"
+  }
+}
+</code></pre>
+<p>This was particularly useful because <code>hero</code> was defined to return a <code>Character</code>,
+which is an interface; we might want to know what concrete type was actually
+returned. If we instead asked for the hero of Episode V:</p>
+<pre><code class="language-graphql">query CheckTypeOfLuke {
+  hero(episode: EMPIRE) {
+    __typename
+    name
+  }
+}
+</code></pre>
+<p>We would find that it was Luke, who is a Human:</p>
+<pre><code class="language-json">{
+  "hero": {
+    "__typename": "Human",
+    "name": "Luke Skywalker"
+  }
+}
+</code></pre>
+<p>As with the type system, this example just scratched the surface of the query
+language. The specification goes into more detail about this topic in the
+"Language" section, and the
+<a href="https://github.com/graphql/graphql-js/blob/master/src/language">language</a>
+directory in GraphQL.js contains code implementing a
+specification-compliant GraphQL query language parser and lexer.</p>
+<h3>Validation</h3>
+<p>By using the type system, it can be predetermined whether a GraphQL query
+is valid or not. This allows servers and clients to effectively inform
+developers when an invalid query has been created, without having to rely
+on runtime checks.</p>
+<p>For our Star Wars example, the file
+<a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsValidation-test.js">starWarsValidationTests.js</a>
+contains a number of queries demonstrating various invalidities, and is a test
+file that can be run to exercise the reference implementation's validator.</p>
+<p>To start, let's take a complex valid query. This is the <code>NestedQuery</code> example
+from the above section, but with the duplicated fields factored out into
+a fragment:</p>
+<pre><code class="language-graphql">query NestedQueryWithFragment {
+  hero {
+    ...NameAndAppearances
+    friends {
+      ...NameAndAppearances
+      friends {
+        ...NameAndAppearances
+      }
+    }
+  }
+}
+
+fragment NameAndAppearances on Character {
+  name
+  appearsIn
+}
+</code></pre>
+<p>And this query is valid. Let's take a look at some invalid queries!</p>
+<p>When we query for fields, we have to query for a field that exists on the
+given type. So as <code>hero</code> returns a <code>Character</code>, we have to query for a field
+on <code>Character</code>. That type does not have a <code>favoriteSpaceship</code> field, so this
+query:</p>
+<pre><code class="language-graphql"># INVALID: favoriteSpaceship does not exist on Character
+query HeroSpaceshipQuery {
+  hero {
+    favoriteSpaceship
+  }
+}
+</code></pre>
+<p>is invalid.</p>
+<p>Whenever we query for a field and it returns something other than a scalar
+or an enum, we need to specify what data we want to get back from the field.
+Hero returns a <code>Character</code>, and we've been requesting fields like <code>name</code> and
+<code>appearsIn</code> on it; if we omit that, the query will not be valid:</p>
+<pre><code class="language-graphql"># INVALID: hero is not a scalar, so fields are needed
+query HeroNoFieldsQuery {
+  hero
+}
+</code></pre>
+<p>Similarly, if a field is a scalar, it doesn't make sense to query for
+additional fields on it, and doing so will make the query invalid:</p>
+<pre><code class="language-graphql"># INVALID: name is a scalar, so fields are not permitted
+query HeroFieldsOnScalarQuery {
+  hero {
+    name {
+      firstCharacterOfName
+    }
+  }
+}
+</code></pre>
+<p>Earlier, it was noted that a query can only query for fields on the type
+in question; when we query for <code>hero</code> which returns a <code>Character</code>, we
+can only query for fields that exist on <code>Character</code>. What happens if we
+want to query for R2-D2s primary function, though?</p>
+<pre><code class="language-graphql"># INVALID: primaryFunction does not exist on Character
+query DroidFieldOnCharacter {
+  hero {
+    name
+    primaryFunction
+  }
+}
+</code></pre>
+<p>That query is invalid, because <code>primaryFunction</code> is not a field on <code>Character</code>.
+We want some way of indicating that we wish to fetch <code>primaryFunction</code> if the
+<code>Character</code> is a <code>Droid</code>, and to ignore that field otherwise. We can use
+the fragments we introduced earlier to do this. By setting up a fragment defined
+on <code>Droid</code> and including it, we ensure that we only query for <code>primaryFunction</code>
+where it is defined.</p>
+<pre><code class="language-graphql">query DroidFieldInFragment {
+  hero {
+    name
+    ...DroidFields
+  }
+}
+
+fragment DroidFields on Droid {
+  primaryFunction
+}
+</code></pre>
+<p>This query is valid, but it's a bit verbose; named fragments were valuable
+above when we used them multiple times, but we're only using this one once.
+Instead of using a named fragment, we can use an inline fragment; this
+still allows us to indicate the type we are querying on, but without naming
+a separate fragment:</p>
+<pre><code class="language-graphql">query DroidFieldInInlineFragment {
+  hero {
+    name
+    ... on Droid {
+      primaryFunction
+    }
+  }
+}
+</code></pre>
+<p>This has just scratched the surface of the validation system; there
+are a number of validation rules in place to ensure that a GraphQL query
+is semantically meaningful. The specification goes into more detail about this
+topic in the "Validation" section, and the
+<a href="https://github.com/graphql/graphql-js/blob/master/src/validation">validation</a>
+directory in GraphQL.js contains code implementing a
+specification-compliant GraphQL validator.</p>
+<h3>Introspection</h3>
+<p>It's often useful to ask a GraphQL schema for information about what
+queries it supports. GraphQL allows us to do so using the introspection
+system!</p>
+<p>For our Star Wars example, the file
+<a href="https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsIntrospection-test.js">starWarsIntrospectionTests.js</a>
+contains a number of queries demonstrating the introspection system, and is a
+test file that can be run to exercise the reference implementation's
+introspection system.</p>
+<p>We designed the type system, so we know what types are available, but if
+we didn't, we can ask GraphQL, by querying the <code>__schema</code> field, always
+available on the root type of a Query. Let's do so now, and ask what types
+are available.</p>
+<pre><code class="language-graphql">query IntrospectionTypeQuery {
+  __schema {
+    types {
+      name
+    }
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__schema": {
+    "types": [
+      {
+        "name": "Query"
+      },
+      {
+        "name": "Character"
+      },
+      {
+        "name": "Human"
+      },
+      {
+        "name": "String"
+      },
+      {
+        "name": "Episode"
+      },
+      {
+        "name": "Droid"
+      },
+      {
+        "name": "__Schema"
+      },
+      {
+        "name": "__Type"
+      },
+      {
+        "name": "__TypeKind"
+      },
+      {
+        "name": "Boolean"
+      },
+      {
+        "name": "__Field"
+      },
+      {
+        "name": "__InputValue"
+      },
+      {
+        "name": "__EnumValue"
+      },
+      {
+        "name": "__Directive"
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Wow, that's a lot of types! What are they? Let's group them:</p>
+<ul>
+<li><strong>Query, Character, Human, Episode, Droid</strong> - These are the ones that we
+defined in our type system.</li>
+<li><strong>String, Boolean</strong> - These are built-in scalars that the type system
+provided.</li>
+<li><strong>__Schema, __Type, __TypeKind, __Field, __InputValue, __EnumValue,
+__Directive</strong> - These all are preceded with a double underscore, indicating
+that they are part of the introspection system.</li>
+</ul>
+<p>Now, let's try and figure out a good place to start exploring what queries are
+available. When we designed our type system, we specified what type all queries
+would start at; let's ask the introspection system about that!</p>
+<pre><code class="language-graphql">query IntrospectionQueryTypeQuery {
+  __schema {
+    queryType {
+      name
+    }
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__schema": {
+    "queryType": {
+      "name": "Query"
+    }
+  }
+}
+</code></pre>
+<p>And that matches what we said in the type system section, that
+the <code>Query</code> type is where we will start! Note that the naming here
+was just by convention; we could have named our <code>Query</code> type anything
+else, and it still would have been returned here if we had specified it
+as the starting type for queries. Naming it <code>Query</code>, though, is a useful
+convention.</p>
+<p>It is often useful to examine one specific type. Let's take a look at
+the <code>Droid</code> type:</p>
+<pre><code class="language-graphql">query IntrospectionDroidTypeQuery {
+  __type(name: "Droid") {
+    name
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Droid"
+  }
+}
+</code></pre>
+<p>What if we want to know more about Droid, though? For example, is it
+an interface or an object?</p>
+<pre><code class="language-graphql">query IntrospectionDroidKindQuery {
+  __type(name: "Droid") {
+    name
+    kind
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Droid",
+    "kind": "OBJECT"
+  }
+}
+</code></pre>
+<p><code>kind</code> returns a <code>__TypeKind</code> enum, one of whose values is <code>OBJECT</code>. If
+we asked about <code>Character</code> instead:</p>
+<pre><code class="language-graphql">query IntrospectionCharacterKindQuery {
+  __type(name: "Character") {
+    name
+    kind
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Character",
+    "kind": "INTERFACE"
+  }
+}
+</code></pre>
+<p>We'd find that it is an interface.</p>
+<p>It's useful for an object to know what fields are available, so let's
+ask the introspection system about <code>Droid</code>:</p>
+<pre><code class="language-graphql">query IntrospectionDroidFieldsQuery {
+  __type(name: "Droid") {
+    name
+    fields {
+      name
+      type {
+        name
+        kind
+      }
+    }
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Droid",
+    "fields": [
+      {
+        "name": "id",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL"
+        }
+      },
+      {
+        "name": "name",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      },
+      {
+        "name": "friends",
+        "type": {
+          "name": null,
+          "kind": "LIST"
+        }
+      },
+      {
+        "name": "appearsIn",
+        "type": {
+          "name": null,
+          "kind": "LIST"
+        }
+      },
+      {
+        "name": "primaryFunction",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Those are our fields that we defined on <code>Droid</code>!</p>
+<p><code>id</code> looks a bit weird there, it has no name for the type. That's
+because it's a "wrapper" type of kind <code>NON_NULL</code>. If we queried for
+<code>ofType</code> on that field's type, we would find the <code>String</code> type there,
+telling us that this is a non-null String.</p>
+<p>Similarly, both <code>friends</code> and <code>appearsIn</code> have no name, since they are the
+<code>LIST</code> wrapper type. We can query for <code>ofType</code> on those types, which will
+tell us what these are lists of.</p>
+<pre><code class="language-graphql">query IntrospectionDroidWrappedFieldsQuery {
+  __type(name: "Droid") {
+    name
+    fields {
+      name
+      type {
+        name
+        kind
+        ofType {
+          name
+          kind
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>and we get back:</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Droid",
+    "fields": [
+      {
+        "name": "id",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "name",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "friends",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": "Character",
+            "kind": "INTERFACE"
+          }
+        }
+      },
+      {
+        "name": "appearsIn",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": "Episode",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "primaryFunction",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Let's end with a feature of the introspection system particularly useful
+for tooling; let's ask the system for documentation!</p>
+<pre><code class="language-graphql">query IntrospectionDroidDescriptionQuery {
+  __type(name: "Droid") {
+    name
+    description
+  }
+}
+</code></pre>
+<p>yields</p>
+<pre><code class="language-json">{
+  "__type": {
+    "name": "Droid",
+    "description": "A mechanical creature in the Star Wars universe."
+  }
+}
+</code></pre>
+<p>So we can access the documentation about the type system using introspection,
+and create documentation browsers, or rich IDE experiences.</p>
+<p>This has just scratched the surface of the introspection system; we can
+query for enum values, what interfaces a type implements, and more. We
+can even introspect on the introspection system itself. The specification goes
+into more detail about this topic in the "Introspection" section, and the <a href="https://github.com/graphql/graphql-js/blob/master/src/type/introspection.js">introspection</a>
+file in GraphQL.js
+contains code implementing a specification-compliant GraphQL query
+introspection system.</p>
+<h3>Additional Content</h3>
+<p>This README walked through the GraphQL.js reference implementation's type
+system, query execution, validation, and introspection systems. There's more
+in both <a href="https://github.com/graphql/graphql-js/">GraphQL.js</a> and specification,
+including a description and implementation for executing queries, how to format
+a response, explaining how a type system maps to an underlying implementation,
+and how to format a GraphQL response, as well as the grammar for GraphQL.</p></div><p data-reactid="14"></p><p data-reactid="15"><a href="/gatsby-demo-blog/first-draft" data-reactid="16"><!-- react-text: 17 -->Next: <!-- /react-text --><!-- react-text: 18 -->The first draft<!-- /react-text --></a></p></div></div></div></div></div><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-604c0271e7de0126a935.js","107818501498521":"component---src-templates-blog-post-js-53f5e13af07cbc44adcb.js","205117723866763":"component---src-templates-all-tags-js-0893a7ab101ca9f5677d.js","50739212244294":"component---src-templates-tags-js-855e330e93491caa483f.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-1a8a8fc0a82b77502c10.js","218538773642512":"component---src-pages-page-2-js-075954cd9c4544c7dcd8.js","60335399758886":"path----cac63ff5c1b42581353c.js","60847963602312":"path---graph-ql-b5914f96844e918bb37c.js","24247929987560":"path---first-draft-1d996611f166fc8c67b0.js","55702396619907":"path---tags-833252cb1ea6a1854a76.js","206746316984965":"path---tags-draft-d5442fca1fe237fbab89.js","41859931689838":"path---tags-graphs-5089e7a75578c02348e6.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-e0b8574a2355596cff39.js","135728916539164":"path---page-2-a0e39f21c11f6a62c5ab.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-e1fbdcb20f729d9e6330.js"}/*]]>*/</script><script>/*<![CDATA[*/["/gatsby-demo-blog/commons-a07bddd5c4350f4b84cb.js","/gatsby-demo-blog/app-604c0271e7de0126a935.js","/gatsby-demo-blog/path---graph-ql-b5914f96844e918bb37c.js","/gatsby-demo-blog/component---src-templates-blog-post-js-53f5e13af07cbc44adcb.js","/gatsby-demo-blog/component---src-layouts-index-js-e1fbdcb20f729d9e6330.js"].forEach(function(s){document.write('<script src="'+s+'" defer></'+'script>')})/*]]>*/</script></body></html>
